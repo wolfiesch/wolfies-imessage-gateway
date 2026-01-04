@@ -21,6 +21,23 @@ python3 gateway/imessage_client.py unread
 python3 gateway/imessage_client.py send "Mom" "Happy birthday!"
 ```
 
+## C++ Gateway (Experimental)
+
+Prefer a native binary? Build the C++ version located in `gateway/cpp`:
+
+```bash
+cd gateway/cpp
+cmake -B build -S .
+cmake --build build
+
+# Usage
+./build/imessage_gateway contacts
+./build/imessage_gateway messages "John" --limit 10 --json
+./build/imessage_gateway send "Mom" "Hello from C++!"
+```
+
+The C++ gateway mirrors the Python commands (search, messages, recent, unread, send, contacts, analytics, followup) and reads the same `config/contacts.json` for contact resolution. It queries `~/Library/Messages/chat.db` directly and uses `osascript` for sending.
+
 ## All Commands (20 total)
 
 ### Core Commands (8)

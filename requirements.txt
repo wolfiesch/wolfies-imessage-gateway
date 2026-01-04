@@ -19,6 +19,7 @@ pyobjc-framework-Cocoa>=9.0     # For NSAttributedString parsing
 
 # Utilities
 python-dateutil>=2.8.0
+psutil>=5.9.0
 
 # Testing
 pytest>=7.4.0
