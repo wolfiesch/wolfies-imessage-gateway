@@ -123,6 +123,23 @@ python3 gateway/imessage_client.py handles --days 30
 python3 gateway/imessage_client.py summary "John" --days 7 --json
 ```
 
+## C++ Gateway Wrapper
+
+A lightweight C++ binary embeds CPython and reuses `imessage_client.py` so the
+gateway can be launched without starting a fresh Python process each time.
+
+```bash
+# Build the wrapper
+make -C gateway/cpp
+
+# Run commands via the C++ binary
+./gateway/cpp/imessage_gateway recent --limit 5
+./gateway/cpp/imessage_gateway contacts --json
+
+# If you move the binary outside the repo root, set IMESSAGE_MCP_ROOT
+IMESSAGE_MCP_ROOT=/path/to/imessage-mcp ./imessage_gateway unread
+```
+
 ## Contact Resolution
 
 Contact names are fuzzy-matched from `config/contacts.json`:
@@ -164,6 +181,7 @@ Run the benchmark suite:
 python3 gateway/benchmarks.py           # Full suite
 python3 gateway/benchmarks.py --quick   # Quick check
 python3 gateway/benchmarks.py --json    # JSON output
+python3 gateway/benchmarks_cpp.py       # Compare Python vs C++ gateway
 ```
 
 Latest results (20 benchmarks, 100% success):
