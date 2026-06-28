@@ -57,6 +57,7 @@ htmlcov/
 *.swo
 *~
 .DS_Store
+gateway/cpp/imessage_gateway
 
 # Logs (keep example log format)
 *.log
