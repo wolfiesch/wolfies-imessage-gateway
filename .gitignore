@@ -64,3 +64,7 @@ htmlcov/
 # Local development
 *.local.json
 .env.local
+
+# Rust builds
+target/
+gateway-rs/target/

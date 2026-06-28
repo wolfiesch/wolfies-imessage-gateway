@@ -276,6 +276,22 @@ Phone numbers can be in any format - they're normalized automatically.
 - Attachment-only messages don't have text content
 - This is normal for some message types
 
+## Rust Gateway (Experimental)
+
+A Rust rewrite of the gateway CLI lives in `gateway-rs/` with the same core commands and JSON output.
+
+```bash
+# Run from repo root
+cargo run --manifest-path gateway-rs/Cargo.toml -- --help
+
+# Examples
+cargo run --manifest-path gateway-rs/Cargo.toml -- unread --json --limit 5
+cargo run --manifest-path gateway-rs/Cargo.toml -- search "John" --limit 10
+cargo run --manifest-path gateway-rs/Cargo.toml -- send "Mom" "On my way!"
+```
+
+Use `--contacts` to point at a custom `contacts.json` and `--database` to override the default `~/Library/Messages/chat.db` path.
+
 ## Development
 
 ```bash

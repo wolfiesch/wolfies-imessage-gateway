@@ -2,6 +2,8 @@
 
 Standalone CLI for iMessage operations without running the MCP server. **19x faster** than MCP tools.
 
+> Looking for a Rust version? See `../gateway-rs/` for a Rust rewrite of the gateway with the same core commands and JSON output.
+
 ## Performance
 
 | Metric | MCP Server | Gateway CLI | Speedup |
