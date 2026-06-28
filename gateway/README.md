@@ -2,6 +2,20 @@
 
 Standalone CLI for iMessage operations without running the MCP server. **19x faster** than MCP tools.
 
+## Go Gateway (new)
+
+The gateway is also available as a Go CLI that shells out to the system `sqlite3` binary for fast, dependency-free access to your chat database.
+
+```bash
+# From repo root
+cd gateway
+go run . recent
+go run . messages "John" --limit 10
+go run . send "Mom" "Happy birthday!"
+```
+
+> The Go version uses `sqlite3` and `osascript` directly, so no Python packages are required.
+
 ## Performance
 
 | Metric | MCP Server | Gateway CLI | Speedup |
