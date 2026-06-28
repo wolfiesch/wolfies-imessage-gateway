@@ -21,6 +21,20 @@ python3 gateway/imessage_client.py unread
 python3 gateway/imessage_client.py send "Mom" "Happy birthday!"
 ```
 
+### Go Implementation (experimental)
+
+Prefer Go? A lightweight Go version of the gateway lives in `gateway/go` with zero external dependencies (uses the `sqlite3` CLI and AppleScript).
+
+```bash
+cd gateway/go
+go build -o imessage-gateway
+
+# Example commands (from repo root or any directory)
+./gateway/go/imessage-gateway search "John" --limit 20
+./gateway/go/imessage-gateway recent --json --db ~/Library/Messages/chat.db
+./gateway/go/imessage-gateway send "Mom" "On my way!"
+```
+
 ## All Commands (20 total)
 
 ### Core Commands (8)
